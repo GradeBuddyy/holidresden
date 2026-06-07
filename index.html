@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOLI in Dresden 2026 — Festival of Colors</title>
+<meta name="description" content="HOLI Festival of Colors in Dresden — 13.06.2026, 17–23 Uhr an der Leutewitzer Windmühle. Live DJs, Farbpulver, Drinks & Food. Dress white. Leave colored!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#ff009d;
+    --magenta:#ec1c93;
+    --orange:#ff6a00;
+    --yellow:#ffd400;
+    --purple:#8e24ff;
+    --blue:#1e9bff;
+    --green:#34d65d;
+    --ink:#0b0410;
+    --ink-2:#160a22;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Poppins',system-ui,sans-serif;
+    background:var(--ink);color:#fff;overflow-x:hidden;line-height:1.5;
+  }
+  ::selection{background:var(--pink);color:#fff}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;
+    padding:80px 20px;overflow:hidden;
+    background:
+      radial-gradient(circle at 12% 88%, rgba(142,36,255,.45), transparent 42%),
+      radial-gradient(circle at 88% 14%, rgba(255,106,0,.45), transparent 42%),
+      radial-gradient(circle at 78% 82%, rgba(30,155,255,.38), transparent 40%),
+      radial-gradient(circle at 22% 18%, rgba(236,28,147,.4), transparent 44%),
+      linear-gradient(160deg,#23082f 0%, #3f0d28 38%, #5d160f 72%, #220815 100%);
+  }
+  .hero-inner{position:relative;z-index:2;width:100%;max-width:840px;display:flex;flex-direction:column;align-items:center}
+
+  /* Poster-Video als Showcase */
+  .poster-frame{
+    width:min(800px,94vw);padding:4px;border-radius:24px;
+    background:linear-gradient(135deg,var(--pink),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));
+    box-shadow:0 0 64px rgba(255,0,157,.22), 0 24px 64px rgba(0,0,0,.5);
+  }
+  .poster-frame video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:20px;background:var(--ink-2)}
+
+  /* Countdown */
+  .cd-block{margin-top:28px;text-align:center}
+  .cd-intro{font-size:12px;letter-spacing:3px;text-transform:uppercase;opacity:.7;font-weight:600;margin-bottom:12px}
+  .hero-cd{display:flex;gap:8px;justify-content:center}
+  .hcd{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px 0;min-width:clamp(60px,16vw,80px);text-align:center;backdrop-filter:blur(8px)}
+  .hcd b{font-family:'Anton';font-size:clamp(26px,5vw,38px);line-height:1;display:block;
+    background:linear-gradient(180deg,#fff,#ffd9f0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hcd span{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;opacity:.6;font-weight:600}
+  .hero-cd-live{display:none;font-family:'Anton';font-size:clamp(22px,4vw,32px);color:var(--yellow)}
+
+  /* Preis + Gratis */
+  .hero-stickers{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+  .sticker{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:50px;font-weight:700;font-size:14px}
+  .sticker.price{background:var(--yellow);color:var(--ink)}
+  .sticker.free{background:linear-gradient(90deg,var(--magenta),#b3006e);color:#fff}
+
+  /* Maps-Button */
+  .loc-btn{
+    display:inline-flex;align-items:center;gap:11px;margin-top:20px;
+    padding:11px 24px 11px 18px;border-radius:50px;text-decoration:none;color:#fff;
+    background:linear-gradient(90deg,var(--pink),var(--orange));
+    box-shadow:0 8px 22px rgba(255,0,157,.4);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .loc-btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 12px 28px rgba(255,0,157,.55)}
+  .loc-btn:active{transform:none}
+  .loc-btn .loc-pin{font-size:22px;line-height:1}
+  .loc-btn .loc-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left;font-weight:700;font-size:15px}
+  .loc-btn .loc-txt small{font-weight:500;font-size:11px;opacity:.9;letter-spacing:.2px;margin-top:2px}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:520px){
+    .hero{padding:64px 16px}
+    .hero-stickers{width:100%}
+    .hero-cd{gap:6px}
+    .hcd{min-width:0;flex:1;padding:9px 4px}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+
+    <div class="poster-frame">
+      <video autoplay muted loop playsinline preload="auto" poster="holi-poster.jpg">
+        <source src="holi-bg.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="cd-block">
+      <div class="cd-intro">⏳ Es wird bunt in …</div>
+      <div class="hero-cd" id="cd">
+        <div class="hcd"><b id="days">00</b><span>Tage</span></div>
+        <div class="hcd"><b id="hours">00</b><span>Std</span></div>
+        <div class="hcd"><b id="mins">00</b><span>Min</span></div>
+        <div class="hcd"><b id="secs">00</b><span>Sek</span></div>
+      </div>
+      <div class="hero-cd-live" id="cdLive">🎉 Das Festival läuft — leave colored!</div>
+    </div>
+
+    <div class="hero-stickers">
+      <span class="sticker price">🎟 10 € · nur Abendkasse</span>
+      <span class="sticker free">＋ 1× Farbpulver gratis</span>
+    </div>
+
+    <a class="loc-btn" href="https://maps.app.goo.gl/Lrvzr5KevKZeJVur5" target="_blank" rel="noopener">
+      <span class="loc-pin">📍</span>
+      <span class="loc-txt">Leutewitzer Windmühle<small>Auf Google Maps ansehen ↗</small></span>
+    </a>
+
+  </div>
+</header>
+
+<script>
+  /* ===== Countdown ===== */
+  const target = new Date('2026-06-13T17:00:00+02:00').getTime();
+  const pad = n => String(n).padStart(2,'0');
+  const elDays=document.getElementById('days'),elHours=document.getElementById('hours'),
+        elMins=document.getElementById('mins'),elSecs=document.getElementById('secs');
+  function tick(){
+    const diff = target - Date.now();
+    if(diff <= 0){
+      document.getElementById('cd').style.display='none';
+      document.getElementById('cdLive').style.display='block';
+      return;
+    }
+    elDays.textContent=pad(Math.floor(diff/86400000));
+    elHours.textContent=pad(Math.floor(diff%86400000/3600000));
+    elMins.textContent=pad(Math.floor(diff%3600000/60000));
+    elSecs.textContent=pad(Math.floor(diff%60000/1000));
+  }
+  tick(); setInterval(tick,1000);
+
+  /* ===== Video sicher starten (falls Autoplay zögert) ===== */
+  const vid = document.querySelector('.poster-frame video');
+  if(vid){ const p = vid.play(); if(p && p.catch) p.catch(()=>{}); }
+</script>
+</body>
+</html>
